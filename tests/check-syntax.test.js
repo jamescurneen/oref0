@@ -1,3 +1,24 @@
+/*
+  This code constitutes a unit test designed to check the syntax of JavaScript, Python, and shell script files present in the 'oref0/bin', 'oref0/lib', and 'oref0/www' directories.
+
+  The test evaluates each file type using different commands:
+  - JavaScript files ('.js') are checked using 'node --check'.
+  - Shell script files ('.sh') are validated using 'bash -n'.
+  - Python files ('.py') are syntax-checked with 'python3 -m py_compile'. The verification occurs as Python 3, irrespective of the designated Python version in the shebang line.
+
+  The main functions in the code:
+  - 'getFileFormat' determines the file format based on its extension.
+  - 'checkFile' executes syntax checks based on the file's format, raising assertions if syntax errors are detected.
+  - 'pythonCompiledNameOf' generates the compiled file name for Python files.
+  - 'recursiveListFiles' creates a list of files within specified directories.
+
+  The 'Syntax checks' describe block utilizes the 'getFileFormat', 'checkFile', and 'recursiveListFiles' functions to perform syntax checks on the identified files within the designated directories.
+
+  The test suite iterates through the files, evaluates their formats, and executes the respective syntax checks, reporting any detected syntax errors.
+*/
+
+
+
 // A unit test which checks Javascript, Python and bash files in oref0/bin and
 // oref0/lib for syntax errors. Uses "node --check" for Javascript,
 // "python3 -m py_compile" for Python, and "bash -n" for shell scripts. Python
