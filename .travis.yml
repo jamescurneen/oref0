@@ -1,3 +1,34 @@
+/*
+  The provided code segment defines configuration settings for a continuous integration (CI) environment using Travis CI.
+
+  The code utilizes a matrix configuration approach, specifying multiple versions of Node.js and Python for testing different environments.
+
+  Defined Steps:
+  - 'node_js-steps' and 'python-steps' are aliases defining configurations for Node.js and Python, respectively.
+  - 'node_js-steps' configuration:
+    - Sets the language to 'node_js'.
+    - Defines the build script as 'make travis'.
+    - Specifies an 'after_script' to execute 'make report'.
+  - 'python-steps' configuration:
+    - Sets the language to 'python'.
+    - Installs 'flake8' using 'pip' during the 'install' phase.
+    - Executes 'flake8' checks for Python syntax errors, undefined names, complexity, and line length during the 'script' phase.
+  
+  Matrix Configuration:
+  - 'include' section: Specifies various test configurations for different versions of Node.js and Python.
+    - Node.js configurations:
+      - Versions: "8", "10", and the current version available on Travis CI ("node").
+      - Inherited configurations from 'node_js-steps'.
+    - Python configurations:
+      - Versions: "2.7" and "3.8".
+      - Inherited configurations from 'python-steps'.
+  
+  This Travis CI setup runs tests for different Node.js and Python versions, ensuring compatibility and detecting syntax errors and code quality issues in the codebase.
+*/
+
+
+
+
 node_js-steps: &node_js-steps
   language: node_js
   script: make travis
