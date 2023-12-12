@@ -1,3 +1,17 @@
+/*
+This AWK script, a part of oref0, processes input data representing blood glucose readings and calculates various statistical measures:
+
+1. Initializes variables for minimum and default blood glucose levels.
+2. Accumulates sum, count, and squares of input values for statistical calculations.
+3. Determines the minimum and maximum blood glucose readings, excluding values below 39.
+4. Tracks the count of values within specific blood glucose ranges (low, in-range, high).
+5. Calculates and prints statistical measures: count, minimum, maximum, average, standard deviation, and percentages of time in range (TIR), low, and high values within specified blood glucose ranges (min_bg - max_bg).
+
+The script primarily processes blood glucose data, computes statistical metrics, and provides insights into the distribution of blood glucose readings within predefined ranges, aiming to offer insights into glycemic control.
+*/
+
+
+
 BEGIN {
     min=1000
     if (!min_bg) { min_bg=70 }
