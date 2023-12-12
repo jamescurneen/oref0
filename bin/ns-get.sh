@@ -1,3 +1,22 @@
+
+/*
+This Bash script, part of oref0, facilitates interactions with a Nightscout instance to query and retrieve entries data.
+
+The script offers functionality for querying and retrieving entries from Nightscout:
+- Provides the ability to specify the Nightscout host, type of query, and output format.
+- Parses options such as 'type' or 'host' to manage various entry points or host settings.
+- Sets up cURL requests to the Nightscout API endpoints to retrieve entries data based on the specified parameters.
+
+Functions:
+- `usage`: Displays the usage guidelines and instructions for the script.
+- `CURL_FLAGS`: Sets cURL command flags for handling requests (such as compression, verbosity, etc.).
+- `REPORT_ENDPOINT`: Constructs the Nightscout API endpoint URL based on specified parameters like report type and query.
+- Processes different cases based on provided command-line arguments to retrieve entries data from Nightscout and output it in the specified format.
+
+The script is designed to allow users to interact with Nightscout, fetch entries data, and adapt queries based on specific needs.
+*/
+
+
 #!/usr/bin/env bash
 
 # Author: Ben West
