@@ -1,3 +1,25 @@
+
+/*
+This Python 2 script, part of the oref0 system, facilitates Bluetooth PAN (Personal Area Network) connectivity management. It leverages the BlueZ Bluetooth protocol stack for server and client operations, enabling device connection and disconnection within a PAN network.
+
+The script provides functionalities for two main operations:
+- 'server': Establishes the script as a Network Access Point (NAP) server, allowing connection to devices.
+- 'client': Connects to a PAN network or disconnects from an existing network.
+
+The script performs the following key tasks:
+- Discovers and utilizes Bluetooth adapter and device interfaces via the 'org.bluez' D-Bus service.
+- Handles Bluetooth device and adapter management for server and client functionalities.
+- Utilizes the 'brctl' command for managing bridge interfaces in the server mode.
+- Manages connections and disconnections with remote devices based on specified UUIDs.
+
+The script offers detailed argument parsing, enabling flexible operations such as setting local device addresses, UUIDs for service, enabling systemd service support, and managing verbose operation modes for debugging purposes.
+
+Additionally, it contains error handling mechanisms and ensures graceful termination upon receiving SIGTERM signals.
+
+This script streamlines the process of Bluetooth PAN network establishment and device connections for the oref0 system, contributing to the efficient management of Bluetooth connectivity in diabetes treatment devices.
+*/
+
+
 #!/usr/bin/env python2
 from __future__ import absolute_import, print_function
 
