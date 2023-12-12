@@ -1,3 +1,23 @@
+/*
+  This Bash script, oref0-autosens-loop, is a part of oref0 (OpenAPS Reference Design) and serves as a loop for the automatic detection of insulin sensitivity (autosens) in an artificial pancreas system.
+
+  Functionality:
+  - Checks various conditions (e.g., CPU temperature, load) before executing autosens.
+  - Runs autosens only if specific conditions are met (e.g., pumphistory-24h is newer than autosens, or autosens.json is missing or empty).
+  - Executes oref0-detect-sensitivity using specific input files to refresh autosens.json, which contains insulin sensitivity ratios.
+  - Handles refreshing autosens or maintaining the current autosens.json based on the outcome of oref0-detect-sensitivity.
+  - Generates logs indicating the status of autosens refresh.
+
+  Usage:
+  - The script can be executed without any arguments.
+  - It checks the conditions for running autosens and refreshes autosens.json if necessary.
+
+  Note:
+  - This script is a critical part of an artificial pancreas system and contributes to the continuous monitoring and adjustment of insulin sensitivity in response to changing conditions.
+*/
+
+
+
 #!/usr/bin/env bash
 
 source $(dirname $0)/oref0-bash-common-functions.sh || (echo "ERROR: Failed to run oref0-bash-common-functions.sh. Is oref0 correctly installed?"; exit 1)
