@@ -1,3 +1,21 @@
+/*
+  This Bash script facilitates the installation and setup of various essential packages and tools for oref0 on a Debian-based system, such as Raspberry Pi or Edison-based rigs.
+
+  Functionality:
+  - Installs necessary packages (sudo, git, python, python-dev, etc.) using apt-get.
+  - Checks the OS version and installs specific versions of jq (JSON processor) based on the OS version.
+  - Installs or upgrades Node.js to the latest version (v10) using nodesource repository for Edison or apt for other systems.
+  - Ensures setuptools and the openaps toolkit are updated or installed via pip.
+  - Runs openaps-specific installation commands like openaps-install-udev-rules and activate-global-python-argcomplete.
+  - Verifies successful installation and displays the openaps version.
+
+  Note:
+  - This script aims to automate the installation and configuration of essential software tools required for the oref0 system to function properly on a Debian-based system, providing necessary dependencies and versions for compatibility.
+*/
+
+
+
+
 #!/usr/bin/env bash
 
 die() {
