@@ -1,3 +1,21 @@
+/*
+This Bash script, part of oref0, compiles various pump data into a single Nightscout "profile" document.
+
+The script generates a Nightscout profile document containing:
+- Carb ratios
+- Active basal profiles
+- Insulin sensitivities
+- BG targets
+
+The script follows these main steps:
+1. Retrieves pump data (settings, carb ratios, basal rates, sensitivities, BG targets).
+2. Processes and compiles the separate pump reports into a single Nightscout profile document.
+3. Utilizes jq, a command-line JSON processor, to perform various transformations and manipulations on the data, such as formatting time fields and creating JSON structures.
+
+The resulting Nightscout profile document establishes a unified set of settings for therapy, allowing Nightscout to manage and visualize data effectively.
+*/
+
+
 #!/usr/bin/env bash
 
 # Author: Ben West
