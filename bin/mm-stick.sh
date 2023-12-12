@@ -1,3 +1,22 @@
+
+/*
+This Bash script, a part of oref0, provides various operations to interact with a Medtronic USB stick using decocare utilities.
+
+It supports several operations including:
+- `scan`: Prints the local location of a plugged-in Medtronic stick.
+- `diagnose`: Runs diagnostic checks on the connected Medtronic stick using `python -m decocare.stick`.
+- `warmup`: Performs scan and diagnose with no output. Exits 0 on success or a non-zero exit code otherwise.
+- `insert` / `remove`: Inserts or removes the `usbserial` kernel module for the Medtronic stick.
+- `udev-info`: Prints udev information about the Medtronic stick.
+- `list-usb`: Lists USB information about the connected Medtronic stick.
+- `reset-usb`: Resets the entire USB stack, potentially risky action. Requires root permissions.
+- `fail`: Always returns a failing exit code.
+
+The script takes command-line arguments to execute these operations, allowing users to interact with the connected Medtronic stick, perform diagnostics, or manage USB-related configurations.
+
+It is used for troubleshooting, USB module management, and accessing information related to the Medtronic USB stick, catering specifically to Medtronic device users interacting with the oref0 system.
+*/
+
 #!/usr/bin/env bash -eu
 
 # Author: Ben West @bewest
