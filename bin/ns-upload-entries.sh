@@ -1,3 +1,23 @@
+/*
+  This Bash script, part of oref0, facilitates the upload of glucose entries (contained in a JSON file) to Nightscout (NS) using its API.
+  
+  The script takes entries (glucose data) stored in a JSON file and uploads them to the specified Nightscout host.
+  
+  Arguments:
+  - entries.json: JSON file containing glucose entries to be uploaded.
+  - http://nightscout.host:1337: Nightscout host with its respective port (default: localhost:1337) where the entries will be uploaded.
+  
+  Usage:
+  The script can be used via the command line by providing the entries file path and the Nightscout host URL as arguments.
+  
+  Functionality:
+  - Checks for API_SECRET and NIGHTSCOUT_HOST variables set in the calling environment.
+  - Constructs the REST_ENDPOINT for uploading entries to Nightscout, taking into account API_SECRET authentication.
+  - Executes a cURL command to POST the entries data to the Nightscout REST API.
+  - Logs the upload status and touches an OUTPUT file (if specified) to indicate a successful upload.
+*/
+
+
 #!/usr/bin/env bash
 
 # Author: Ben West
