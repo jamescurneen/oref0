@@ -1,3 +1,19 @@
+/*
+  This Bash script is used to set a temporary target by formatting it as JSON and storing it in 'settings/local-temptargets.json'. The pump loop in OpenAPS will find this file on its next iteration.
+
+  Functionality:
+  - Takes command-line arguments or reads JSON from stdin to create a temporary target configuration.
+  - If no arguments are provided, it expects JSON input via stdin. With one argument, it treats it as a filename containing JSON data.
+  - If two or more arguments are provided, it runs the 'oref0-set-local-temptarget.js' script, forwarding all arguments, and the input becomes the output of that script.
+  - Writes the resultant JSON to '/tmp/temptarget.json'.
+  - Merges the new temporary target JSON with existing data in 'settings/local-temptargets.json' using 'jq' and writes it back to the same file.
+
+  Note:
+  - This script acts as a pipeline, taking JSON input from various sources and merging it with existing target settings in 'settings/local-temptargets.json' for temporary configuration.
+*/
+
+
+
 #!/usr/bin/env bash
 
 source $(dirname $0)/oref0-bash-common-functions.sh || (echo "ERROR: Failed to run oref0-bash-common-functions.sh. Is oref0 correctly installed?"; exit 1)
