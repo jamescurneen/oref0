@@ -1,3 +1,19 @@
+/*
+  This Bash script is used to set up a development environment and download the source code for various OpenAPS projects from GitHub into the ~/src directory. It's primarily intended for developers or advanced users for troubleshooting purposes.
+
+  Functionality:
+  - Installs essential packages and tools using apt-get such as git, Python, Node.js, and others.
+  - Installs required Python packages, updates setuptools, and installs npm packages like json globally.
+  - Clones necessary repositories (decocare, dexcom_reader, openaps, openaps-contrib, oref0) from their respective GitHub URLs into the ~/src directory.
+  - For each cloned repository, it performs a 'git pull' to update if the repository already exists locally and sets up the Python development environment.
+  - Installs and links dependencies for the oref0 project, followed by installing global npm packages and running openaps commands to verify the installation.
+
+  Note:
+  - This script is utilized to set up a complete development environment for OpenAPS projects by installing dependencies, downloading repositories, and setting up the development environment for Python and Node.js projects.
+*/
+
+
+
 #!/usr/bin/env bash
 
 source $(dirname $0)/oref0-bash-common-functions.sh || (echo "ERROR: Failed to run oref0-bash-common-functions.sh. Is oref0 correctly installed?"; exit 1)
