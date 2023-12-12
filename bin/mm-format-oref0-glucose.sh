@@ -1,3 +1,15 @@
+/*
+This Bash script, part of oref0, is designed to format Medtronic glucose history data into the oref0 format.
+
+The script takes Medtronic glucose history data in JSON format and processes it using jq, a command-line JSON processor. Here's what it does:
+1. Retrieves Medtronic-specific data fields and modifies them, such as appending Medtronic-specific information, setting data type based on field values, and adding device information.
+2. Checks and formats date-related fields ('dateString' and 'date') to make them compatible with oref0 format.
+3. Generates a new JSON document containing the processed data, formatted according to oref0 specifications.
+
+The resulting output is a modified JSON document that conforms to the oref0 format, ready for further processing or analysis within the context of oref0 or related systems.
+*/
+
+
 #!/usr/bin/env bash
 
 # Author: Ben West @bewest
