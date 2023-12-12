@@ -1,3 +1,23 @@
+/*
+  This Node.js script, a part of oref0, is designed to prepare status information for uploading to Nightscout.
+
+  The script processes various input data files containing device status, IOB (Insulin on Board), pump details, and preferences, among other information.
+  
+  It includes functions to redact sensitive information from preferences (like Nightscout host, BT MAC, Pushover token, etc.) before uploading the data to Nightscout.
+  
+  Functions:
+  - mmtuneStatus: Handles mmtune information parsing.
+  - preferencesStatus: Redacts sensitive information from preferences.
+  - uploaderStatus: Manages uploader information.
+  - ns_status: Processes input data files, constructs a status object, and redacts sensitive information before uploading to Nightscout.
+  
+  Arguments:
+  The script expects command-line arguments for input files related to the device's status, IOB, pump, and uploader, among others.
+  
+  The final output of the script is a JSON object containing formatted status information ready for uploading to Nightscout.
+*/
+
+
 #!/usr/bin/env node
 'use strict';
 
