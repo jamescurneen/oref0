@@ -1,3 +1,24 @@
+/*
+This Bash script, a part of oref0, facilitates the identification and deletion of duplicate entries in a Nightscout instance.
+
+The script provides the following operations:
+- `--find <NIGHTSCOUT_HOST>`: No-op version, reveals what delete would do.
+- `--list <NIGHTSCOUT_HOST>`: Lists duplicate count per 'created_at' timestamp.
+- `delete <NIGHTSCOUT_HOST>`: Deletes duplicate entries from the specified Nightscout host.
+
+It defines functions to:
+- `fetch`: Retrieves data from the specified Nightscout host.
+- `flatten`: Flattens fetched data and extracts the 'created_at' field.
+- `find_dupes_on`: Finds duplicates based on 'created_at' timestamp and initiates deletion operations.
+- `debug_cmd`: Constructs a debug command for deletion.
+- `delete_cmd`: Performs deletion via a DELETE request.
+- `list`: Lists duplicate entries with count and 'created_at' timestamp.
+- `main`: Executes the main operation based on the specified action ('debug_cmd' or 'delete_cmd').
+
+The script interacts with the Nightscout instance using cURL requests, allowing users to identify and delete duplicate treatments entries, primarily catering to Nightscout users managing data integrity.
+*/
+
+
 #!/usr/bin/env bash
 
 source $(dirname $0)/oref0-bash-common-functions.sh || (echo "ERROR: Failed to run oref0-bash-common-functions.sh. Is oref0 correctly installed?"; exit 1)
