@@ -1,3 +1,15 @@
+/*
+This Bash script is a part of the oref0 system, which is utilized for processing and managing data related to diabetes treatment. 
+
+The script iterates through participant directories and processes their data files (treatments and entries) stored in the direct-sharing-31 directory. It extracts relevant data based on date, creating separate JSON files for treatments and entries for each month and year. 
+
+Subsequently, the script executes oref0-autosens-history.js on the processed JSON files to generate historical autosensitivity information for diabetes management. This involves specifying input files (entries and treatments), the profile, and creating output files for historical autosensitivity information.
+
+The script ensures that system load remains below a specified threshold before initiating data processing for each participant. Additionally, it performs error handling and displays output logs, allowing review for potential errors.
+
+This script streamlines the data extraction and analysis process for diabetes-related data, aiding in the management and monitoring of diabetes treatments and historical sensitivity information.
+*/
+
 #!/usr/bin/env bash
 
 oref0_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
