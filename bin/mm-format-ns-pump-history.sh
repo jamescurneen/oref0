@@ -1,3 +1,14 @@
+/*
+This Bash script, part of oref0, formats Medtronic pump-history data into a format compatible with Nightscout.
+
+The script takes Medtronic pump history data (in JSON format) and transforms it into a Nightscout-compatible format. It performs the following operations using jq, a command-line JSON processor:
+1. Maps fields from the Medtronic pump history to a format understandable by Nightscout, including converting timestamp fields and adjusting the data structure.
+2. Generates a new JSON document with modified field names and a suitable structure for Nightscout.
+
+The resulting output is a Nightscout-acceptable JSON document that can be used for visualization or analysis within the Nightscout platform.
+*/
+
+
 #!/usr/bin/env bash
 
 # Author: Ben West
