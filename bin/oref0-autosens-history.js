@@ -1,3 +1,20 @@
+/*
+  This Node.js script determines basal rates for an OpenAPS instance. It is used to calculate insulin sensitivity and ratios based on various inputs, such as glucose data, pump history, and profile information. The script uses the 'basal' and 'autosens' modules from the OpenAPS project.
+
+  Functionality:
+  - Parses command-line arguments using 'yargs' to determine necessary input data files and an optional output file.
+  - Reads glucose, pump history, and profile data from specified files.
+  - Handles different unit conversions for insulin sensitivity factors (ISF) to ensure consistency (mg/dL or mmol/L).
+  - Runs an autosens algorithm to detect sensitivity and adjust basal rates accordingly.
+  - Outputs JSON data containing sensitivity ratio and ISF for each detected instance.
+  - Writes the output to a specified file or logs it to the console if no output file is specified.
+
+  Note:
+  - The script is structured to run from the command line, parsing input files, running the autosens algorithm, and outputting the resulting JSON data.
+  - It utilizes various modules from the OpenAPS project and can be used for determining basal rates in an artificial pancreas system.
+*/
+
+
 #!/usr/bin/env node
 'use strict';
 
