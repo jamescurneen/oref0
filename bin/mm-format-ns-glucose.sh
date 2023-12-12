@@ -1,3 +1,18 @@
+
+/*
+This Bash script, part of oref0, converts Medtronic glucose data into a format suitable for Nightscout, a web-based continuous glucose monitoring system.
+
+- It retrieves input data in JSON format from a Medtronic device.
+- Utilizes jq, a command-line JSON processor, to transform and reformat the Medtronic glucose data.
+- Generates Nightscout-compatible JSON output containing transformed glucose data entries.
+- Provides options to filter only glucose values for Nightscout using the "--oref0" flag.
+
+The script leverages jq and various JSON manipulations to extract and restructure glucose data, enabling compatibility between Medtronic data and Nightscout, facilitating visualization and monitoring of glucose values.
+*/
+
+
+
+
 #!/usr/bin/env bash
 
 # Author: Ben West @bewest
