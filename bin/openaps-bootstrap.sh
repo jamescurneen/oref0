@@ -1,3 +1,17 @@
+/*
+  This Bash script is a part of oref0 and is designed to assist in configuring Wi-Fi settings and installing the current release or a specified branch of oref0.
+
+  Functionality:
+  - Sets the BRANCH variable to 'master' by default for installing the current release of oref0, but allows the user to enter a specific branch for installation.
+  - Disables kernel messages using 'dmesg -D'.
+  - Scans for available Wi-Fi networks using 'ifup wlan0' and 'wpa_cli scan', displaying the strongest networks found.
+  - Backs up and removes current Wi-Fi configurations, then prompts the user to input the network name and password for the new Wi-Fi connection.
+  - Modifies '/etc/network/interfaces' and '/etc/wpa_supplicant/wpa_supplicant.conf' files based on user input for network settings.
+  - Attempts to bring up the wlan0 interface with the new configuration.
+  - Fetches and runs the 'openaps-install.sh' script from the openaps GitHub repository to install the specified branch of oref0.
+*/
+
+
 #!/usr/bin/env bash
 (
 BRANCH=master
