@@ -1,3 +1,22 @@
+/*
+  This Bash script is designed to set up a Raspberry Pi or Edison-based rig for oref0 by performing various system configurations, updates, and installations.
+
+  Functionality:
+  - Configures the hostname of the rig and updates relevant configuration files.
+  - Changes outdated passwords for root and Edison users if necessary.
+  - Sets the timezone using 'dpkg-reconfigure tzdata'.
+  - Applies workarounds specific to certain OS versions (e.g., Debian Jessie) to disable validity checks for archived Debian repositories.
+  - Installs necessary packages and dependencies using 'apt-get'.
+  - Adds Edison user to sudo and dialout groups if the user exists.
+  - Modifies log rotation settings.
+  - Retrieves and installs oref0 and its related packages, allowing the user to specify a branch for installation.
+  - Runs 'oref0-setup.sh' from the cloned oref0 repository, initiating the setup process.
+
+  Note:
+  - This script carries out essential configurations and installations required for setting up the oref0 system on a Raspberry Pi or Edison-based rig.
+*/
+
+
 #!/usr/bin/env bash
 set -e
 
